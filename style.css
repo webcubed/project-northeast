@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Comfortaa");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+@import url("https://fonts.googleapis.com/css?family=Exo+2");
+:root {
+  --primary-color: #292a2d;
+  --accent-color: #202123;
+  --text-color: #f0f0f0;
+  --icon-color: #f0f0f0;
+}
+body, html {
+    color: var(--text-color);
+    text-align: center;
+    font-family: 'Comfortaa';
+    margin: 0;
+    background-color: var(--primary-color);
+}
+#title-container {
+    height: 150px;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    background-color: var(--accent-color);
+}
+#title {
+    margin: auto;
+    text-align: center;
+    font-size: 73px;
+}
+.slideinleft {
+    position: absolute;
+    transition: left 1s;
+}
+.slideinright {
+    position: absolute;
+    transition: right 1s;
+}
+.slideintop {
+    top: -150px;
+    transition: top 1s;
+    position: absolute;
+}
+.slideinbottom {
+    transition: bottom 1s;
+    position: absolute;
+    bottom: -300px;
+}
+.section {
+    height: 500px;
+    background-color: #fff;
+}
+#credits {
+    height: 300px;
+    width: 100%;
+    background-color: var(--accent-color)
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #5d3fd3;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darkgray;
+}
