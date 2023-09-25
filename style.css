@@ -8,68 +8,125 @@
   --text-color: #f0f0f0;
   --icon-color: #f0f0f0;
 }
-body, html {
-    color: var(--text-color);
-    text-align: center;
-    font-family: 'Comfortaa';
-    margin: 0;
-    background-color: var(--primary-color);
+body,
+html {
+  color: var(--text-color);
+  text-align: center;
+  overflow-x: hidden;
+  font-family: "Exo 2";
+  scroll-behavior: smooth !important;
+  margin: 0;
+  background-color: var(--primary-color);
 }
 #title-container {
-    height: 150px;
-    align-items: center;
-    display: flex;
-    width: 100%;
-    background-color: var(--accent-color);
+  height: 150px;
+  align-items: center;
+  display: flex;
+  margin-bottom: calc(100% - 750px);
+  position: relative;
+  width: 100%;
+  background-color: var(--accent-color);
+}
+
+#floating {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  display: block;
+  cursor: pointer;
+  transition: background-color 0.25s ease-in-out;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+  align-items: center;
+  display: flex;
+  border-radius: 50%;
+  border: 1.5px solid #fff;
+  width: 35px;
+  height: 35px;
+  left: 50%;
+  animation: md 2s infinite ease-in-out;
+}
+#floating:hover {
+  transition: border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+  background-color: #5d3fd3;
+  border-color: #5d3fd3;
+}
+#arrow {
+  height: 16px;
+
+  width: 100%;
+}
+
+@keyframes md {
+  0% {
+    bottom: 20px;
+  }
+  50% {
+    bottom: 10px;
+  }
+  100% {
+    bottom: 20px;
+  }
 }
 #title {
-    margin: auto;
-    text-align: center;
-    font-size: 73px;
+  margin: auto;
+  text-align: center;
+  font-family: "Comfortaa";
+  font-size: 73px;
 }
 .slideinleft {
-    position: absolute;
-    transition: left 1s;
+  position: absolute;
+  left: -100%;
+  transition: left 1s;
 }
 .slideinright {
-    position: absolute;
-    transition: right 1s;
+  position: absolute;
+  right: -100%;
+  transition: right 1s;
 }
 .slideintop {
-    top: -150px;
-    transition: top 1s;
-    position: absolute;
+  top: -150px;
+  transition: top 1s;
 }
 .slideinbottom {
-    transition: bottom 1s;
-    position: absolute;
-    bottom: -300px;
+  transition: bottom 1s;
+  bottom: -300px;
 }
-.section {
-    height: 500px;
-    background-color: #fff;
+.container {
+  height: 500px;
+  width: 100%;
+}
+#creditscontainer {
+  position: relative;
 }
 #credits {
-    height: 300px;
-    width: 100%;
-    background-color: var(--accent-color)
+  height: 300px;
+  width: 100%;
+  background-color: var(--accent-color);
 }
-/* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 16px;
+  border-radius: 10px;
 }
-
-/* Track */
+::-webkit-scrollbar:horizontal {
+  height: 15px;
+  border-radius: 10px;
+}
 ::-webkit-scrollbar-track {
-  background: #5d3fd3;
+  background: transparent;
+  border-radius: 10px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
+  background: #5d3fd3;
+  border: 4px solid var(--primary-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
   background: gray;
 }
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: darkgray;
+#sus {
+  color: #fff;
 }
