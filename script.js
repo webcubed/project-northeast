@@ -46,10 +46,70 @@ globalThis.onload = function () {
   }
   checkPosition();
   window.addEventListener("scroll", checkPosition);
+  document.querySelectorAll(".ctitle").forEach(function (e) {
+    var converter = new showdown.Converter(),
+      text = e.innerHTML.toString(),
+      html = converter.makeHtml(text);
+    e.innerHTML = html;
+  });
+
+  var sources = document.getElementById("sources");
   var converter = new showdown.Converter(),
-    text = document.getElementsByClassName("ctitle")[0].innerHTML.toString(),
+    text = sources.innerHTML.toString(),
     html = converter.makeHtml(text);
-  document.getElementsByClassName("ctitle")[0].innerHTML = html;
+  sources.innerHTML = html;
+  var links = document.body.getElementsByTagName("a");
+  var linkCount = links.length;
+  for (var i = 0; i < linkCount; i++) {
+    if (new URL(links[i].href).origin !== location.origin) {
+      links[i].setAttribute("target", "_blank");
+    }
+  }
+  // document.querySelectorAll('a').forEach(function (e) {
+  //   e.addEventListener("click", function (a) {
+  //     open(e.innerHTML)
+  //   })
+  // })
+  document.querySelectorAll(".brief").forEach(function (e) {
+    var converter = new showdown.Converter(),
+      text = e.innerHTML.toString(),
+      html = converter.makeHtml(text);
+    e.innerHTML = html;
+  });
+  document.querySelectorAll(".en").forEach(function (e) {
+    if (
+      e.parentElement.parentElement.parentElement.classList.contains(
+        "slideinright"
+      )
+    ) {
+      e.style.right = "75px";
+    } else if (
+      e.parentElement.parentElement.parentElement.classList.contains(
+        "slideinleft"
+      )
+    ) {
+      e.classList.replace("fa-chevrons-right", "fa-chevrons-left");
+      e.style.left = "75px";
+    }
+  });
+  document.querySelectorAll(".en").forEach(function (e) {
+    e.addEventListener("mouseover", function () {
+      e.style.color = "#5d3fd3";
+    });
+    e.addEventListener("mouseleave", function () {
+      e.style.color = "#fff";
+    });
+  });
+  document
+    .getElementById("floating")
+    .addEventListener("mouseover", function () {
+      document.getElementById("arrow").style.color = "#fff";
+    });
+  document
+    .getElementById("floating")
+    .addEventListener("mouseleave", function () {
+      document.getElementById("arrow").style.color = "#000";
+    });
 };
 function smoothScrollto(event) {
   event.preventDefault();
@@ -144,7 +204,7 @@ function SmoothScroll(target, speed, smooth) {
   }
 
   var requestFrame = (function () {
-    // requestAnimationFrame cross browser
+    // requestAnimationFrame cross browser but NO
     return (
       window.requestAnimationFrame ||
       function (func) {
