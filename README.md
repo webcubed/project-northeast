@@ -4,9 +4,9 @@
 - [ ] Conclusion section which discusses How Native American Culture has influenced that particular Region of the United States and a MINIMUM of 1 section each for the following topics:
 
 - [x] Tribes of the Region
-- [ ] Foods of the Region
-- [ ] The Geography/Climate of the Region
-- [ ] Clothing Worn in the Region
+- [x] Foods of the Region
+- [x] The Geography/Climate of the Region
+- [x] Clothing Worn in the Region
 - [ ] The Religious Beliefs of the Region
 - [ ] Ceremonies of the Region
 - [ ] Animals/Wildlife of the Region

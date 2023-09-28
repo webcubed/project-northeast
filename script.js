@@ -1,5 +1,34 @@
 var scroll;
 globalThis.onload = function () {
+  window.Modal = class {
+    constructor(html) {
+      new showdown.Converter(),
+        (text = html.toString()),
+        (html = converter.makeHtml(text));
+      this.parsedhtml = html;
+      this.element = document.createElement("div");
+      this.element.classList.add("mbg");
+      this.element.innerHTML = `<div class="modal"><div id="mti" style="display: flex;">
+      <i class="fa-regular fa-circle-info">
+      </i>
+      <h1>Additional Information</h1></div>
+      <span id="description">${this.parsedhtml}</span>
+      <button id="close" class="button">Wow!</button>
+      </div>`;
+      this.element.id = "mb";
+      document.body.appendChild(this.element);
+      this.appendedelement = document.getElementById('mb')
+      this.appendedelement.style.animation = "fadein 0.5s linear forwards";
+      this.appendedelement.style.display = 'flex';
+      document.getElementById("close").addEventListener("click", function () {
+        document.getElementById("mb").style.animation =
+          "fadeout 0.5s linear forwards";
+        setTimeout(() => {
+          document.getElementById("mb").remove();
+        }, 500);
+      });
+    }
+  }
   function animatetb() {
     document.querySelectorAll(".slideintop").forEach(function (e) {
       e.style.top = "0px";
@@ -58,6 +87,16 @@ globalThis.onload = function () {
     text = sources.innerHTML.toString(),
     html = converter.makeHtml(text);
   sources.innerHTML = html;
+  var bard = document.getElementById("bard");
+  var converter = new showdown.Converter(),
+    text = bard.innerHTML.toString(),
+    html = converter.makeHtml(text);
+  bard.innerHTML = html;
+  var aaa = document.getElementById("amazingauthor");
+  var converter = new showdown.Converter(),
+    text = aaa.innerHTML.toString(),
+    html = converter.makeHtml(text);
+  aaa.innerHTML = html;
   var links = document.body.getElementsByTagName("a");
   var linkCount = links.length;
   for (var i = 0; i < linkCount; i++) {
@@ -95,9 +134,19 @@ globalThis.onload = function () {
   document.querySelectorAll(".en").forEach(function (e) {
     e.addEventListener("mouseover", function () {
       e.style.color = "#5d3fd3";
+      if (e.classList.contains("fa-chevrons-left")) {
+        e.style.left = "50px";
+      } else if (e.classList.contains("fa-chevrons-right")) {
+        e.style.right = "50px";
+      }
     });
     e.addEventListener("mouseleave", function () {
       e.style.color = "#fff";
+      if (e.classList.contains("fa-chevrons-left")) {
+        e.style.left = "75px";
+      } else if (e.classList.contains("fa-chevrons-right")) {
+        e.style.right = "75px";
+      }
     });
   });
   document
