@@ -8,7 +8,7 @@
 - [x] The Geography/Climate of the Region
 - [x] Clothing Worn in the Region
 - [x] The Religious Beliefs of the Region
-- [ ] Ceremonies of the Region
+- [x] Ceremonies of the Region
 - [ ] Animals/Wildlife of the Region
 - [ ] Shelter/Houses of the Region
 - [ ] Farming of the Region
