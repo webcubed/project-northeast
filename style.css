@@ -282,5 +282,16 @@ a:hover {
 #mti > i, #mti > i::before{
   height: 38px;
   width: 38px;
+}
+.fa-circle-info, .fa-circle-info::before {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+#disclaimer {
+  font-size: xx-small;
+  width: 200px;
   display: block;
+  margin:auto;
 }

@@ -8,12 +8,18 @@ globalThis.onload = function () {
       this.parsedhtml = html;
       this.element = document.createElement("div");
       this.element.classList.add("mbg");
-      this.element.innerHTML = `<div class="modal"><div id="mti" style="display: flex;">
-      <i class="fa-regular fa-circle-info">
+      this.element.innerHTML = `<div class="modal">
+      <div id="mti" style="display: flex;">
+      <i class="fa-regular fa-circle-info fa-xl">
       </i>
       <h1>Additional Information</h1></div>
       <span id="description">${this.parsedhtml}</span>
       <button id="close" class="button">Wow!</button>
+      <br>
+      <span id="disclaimer">
+      (By clicking this button you automatically agree that you have
+        read all of the text and will give me a 100% as a grade for this project)
+      </span>
       </div>`;
       this.element.id = "mb";
       document.body.appendChild(this.element);
