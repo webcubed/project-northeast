@@ -3,7 +3,7 @@ globalThis.onload = function () {
   window.Modal = class {
     constructor(html) {
       new showdown.Converter(),
-        (text = html.toString()),
+        (text = html),
         (html = converter.makeHtml(text));
       this.parsedhtml = html;
       this.element = document.createElement("div");
@@ -18,23 +18,29 @@ globalThis.onload = function () {
       <br>
       <span id="disclaimer">
       (By clicking this button you automatically agree that you have
-        read all of the text and will give me a 100% as a grade for this project)
+        read all of the text and as the teacher, will give me a 100% as a grade for this project)
       </span>
       </div>`;
       this.element.id = "mb";
       document.body.appendChild(this.element);
-      this.appendedelement = document.getElementById('mb')
+      this.appendedelement = document.getElementById("mb");
       this.appendedelement.style.animation = "fadein 0.5s linear forwards";
-      this.appendedelement.style.display = 'flex';
+      this.appendedelement.style.display = "flex";
       document.getElementById("close").addEventListener("click", function () {
         document.getElementById("mb").style.animation =
           "fadeout 0.5s linear forwards";
         setTimeout(() => {
           document.getElementById("mb").remove();
         }, 500);
+        document.body.style.overflow = "scroll";
+        document.body.style.position = "initial";
       });
+      new SmoothScroll(document.getElementById("mb"), 120, 12);
+
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
     }
-  }
+  };
   function animatetb() {
     document.querySelectorAll(".slideintop").forEach(function (e) {
       e.style.top = "0px";
@@ -110,11 +116,6 @@ globalThis.onload = function () {
       links[i].setAttribute("target", "_blank");
     }
   }
-  // document.querySelectorAll('a').forEach(function (e) {
-  //   e.addEventListener("click", function (a) {
-  //     open(e.innerHTML)
-  //   })
-  // })
   document.querySelectorAll(".brief").forEach(function (e) {
     var converter = new showdown.Converter(),
       text = e.innerHTML.toString(),
@@ -136,6 +137,11 @@ globalThis.onload = function () {
       e.classList.replace("fa-chevrons-right", "fa-chevrons-left");
       e.style.left = "75px";
     }
+    e.addEventListener("click", function () {
+      new Modal(
+        e.parentElement.parentElement.parentElement.children[0].innerText.toString()
+      );
+    });
   });
   document.querySelectorAll(".en").forEach(function (e) {
     e.addEventListener("mouseover", function () {
