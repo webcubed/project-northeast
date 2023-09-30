@@ -1,7 +1,7 @@
 # To-do List for Project NorthEast
 ## A Minimum of 12 sections
 - [x] Title section with title and class
-- [ ] Conclusion section which discusses How Native American Culture has influenced that particular Region of the United States and a MINIMUM of 1 section each for the following topics:
+- [x] Conclusion section which discusses How Native American Culture has influenced that particular Region of the United States and a MINIMUM of 1 section each for the following topics:
 
 - [x] Tribes of the Region
 - [x] Foods of the Region
