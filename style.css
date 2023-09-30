@@ -266,6 +266,7 @@ a:hover {
   text-align: center;
   transition: background-color 0.5s ease;
   margin: auto;
+  top: 0;
   padding: auto;
   position: absolute;
   width: 550px;
@@ -274,6 +275,9 @@ a:hover {
   box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%),
     0 1px 5px 0 rgb(0 0 0 / 12%);
   border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
   z-index: 1000000000;
 }
 #mti {
@@ -281,11 +285,13 @@ a:hover {
   justify-content: center;
   align-content: center;
 }
-#mti > i, #mti > i::before{
+#mti > i,
+#mti > i::before {
   height: 38px;
   width: 38px;
 }
-.fa-circle-info, .fa-circle-info::before {
+.fa-circle-info,
+.fa-circle-info::before {
   display: flex;
   justify-content: center;
   align-content: center;
@@ -295,8 +301,16 @@ a:hover {
   font-size: xx-small;
   width: 200px;
   display: block;
-  margin:auto;
+  margin: auto;
 }
 .additional {
   display: none;
+}
+.customa {
+  width: 75%;
+  display: block;
+  margin: auto;
+}
+#description {
+  margin: auto;
 }

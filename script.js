@@ -1,31 +1,41 @@
 var scroll;
 globalThis.onload = function () {
   window.Modal = class {
-    constructor(html) {
+    constructor(html, element) {
+      this.oghtml = html;
       new showdown.Converter(),
-        (text = html),
+        (text = html.toString()),
         (html = converter.makeHtml(text));
-      this.parsedhtml = html;
+      if (!element.classList.contains("parse-exempt")) {
+        this.parsedhtml = html;
+      } else {
+        this.parsedhtml = this.oghtml
+      }
+
       this.element = document.createElement("div");
       this.element.classList.add("mbg");
-      this.element.innerHTML = `<div class="modal">
+      this.element.innerHTML = `<br>
+      <div class="modal">
       <div id="mti" style="display: flex;">
       <i class="fa-regular fa-circle-info fa-xl">
       </i>
       <h1>Additional Information</h1></div>
       <span id="description">${this.parsedhtml}</span>
+      <br>
       <button id="close" class="button">Wow!</button>
       <br>
       <span id="disclaimer">
       (By clicking this button you automatically agree that you have
         read all of the text and as the teacher, will give me a 100% as a grade for this project)
       </span>
+      <br>
       </div>`;
       this.element.id = "mb";
       document.body.appendChild(this.element);
       this.appendedelement = document.getElementById("mb");
       this.appendedelement.style.animation = "fadein 0.5s linear forwards";
       this.appendedelement.style.display = "flex";
+      this.before = window.pageYOffset;
       document.getElementById("close").addEventListener("click", function () {
         document.getElementById("mb").style.animation =
           "fadeout 0.5s linear forwards";
@@ -34,6 +44,7 @@ globalThis.onload = function () {
         }, 500);
         document.body.style.overflow = "scroll";
         document.body.style.position = "initial";
+        window.scrollTo(0, this.before);
       });
       new SmoothScroll(document.getElementById("mb"), 120, 12);
 
@@ -139,7 +150,8 @@ globalThis.onload = function () {
     }
     e.addEventListener("click", function () {
       new Modal(
-        e.parentElement.parentElement.parentElement.children[0].innerText.toString()
+        e.parentElement.parentElement.parentElement.children[0].innerHTML,
+        e.parentElement.parentElement.parentElement.children[0]
       );
     });
   });

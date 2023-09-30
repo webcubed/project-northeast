@@ -9,9 +9,9 @@
 - [x] Clothing Worn in the Region
 - [x] The Religious Beliefs of the Region
 - [x] Ceremonies of the Region
-- [ ] Animals/Wildlife of the Region
-- [ ] Shelter/Houses of the Region
-- [ ] Farming of the Region
-- [ ] Role of Women of the Region
+- [x] Animals/Wildlife of the Region
+- [x] Shelter/Houses of the Region
+- [x] Farming of the Region
+- [x] Role of Women of the Region
 
 ## Each section must include a minimum of 5 sentences describing  IN YOUR OWN WORDS that particular part of Native American Culture and a minimum of 2 images
